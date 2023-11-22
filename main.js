@@ -8,7 +8,7 @@ let isPremium = false;
 document.getElementById("default-user").value = localStorage.getItem("name");
 
 try {
-  fetch(`http://64.227.148.23:4040/api/user/get?user=${user}`)
+  fetch(`http://178.16.138.144:4040/api/user/get?user=${user}`)
     .then((response) => {
       return response.json();
     })
@@ -24,7 +24,7 @@ try {
   alert(e);
 }
 try {
-  fetch(`http://64.227.148.23:4040/api/user/get?user=${user}`)
+  fetch(`http://178.16.138.144:4040/api/user/get?user=${user}`)
     .then((response) => {
       return response.json();
     })
@@ -40,7 +40,7 @@ try {
   alert(e);
 }
 try {
-  fetch(`http://64.227.148.23:4040/api/meeting/get?room=${roomId}`)
+  fetch(`http://178.16.138.144:4040/api/meeting/get?room=${roomId}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data.message.host);
@@ -65,7 +65,7 @@ function updateUser() {
   const now = new Date();
   try {
     fetch(
-      `http://64.227.148.23:4040/api/session/getTimestamp?uid=${userData._id}`
+      `http://178.16.138.144:4040/api/session/getTimestamp?uid=${userData._id}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -207,7 +207,7 @@ let joinStreams = async () => {
 
   try {
     fetch(
-      `http://64.227.148.23:4040/api/session/enroll?room=${roomId}`
+      `http://178.16.138.144:4040/api/session/enroll?room=${roomId}`
     )
       .then((response) => {
         return response.json();
@@ -276,7 +276,7 @@ function countTimestamp() {
   setTimeout(() => {
     countTimestamp();
     try {
-      fetch("http://64.227.148.23:4040/api/session/addTimeStamp", {
+      fetch("http://178.16.138.144:4040/api/session/addTimeStamp", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -290,7 +290,7 @@ function countTimestamp() {
 
     try {
       fetch(
-        `http://64.227.148.23:4040/api/session/getTimestamp?uid=${userData._id}`
+        `http://178.16.138.144:4040/api/session/getTimestamp?uid=${userData._id}`
       )
         .then((response) => response.json())
         .then(async (data) => {
